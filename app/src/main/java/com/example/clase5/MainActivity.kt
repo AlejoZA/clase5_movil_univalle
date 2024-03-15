@@ -66,14 +66,14 @@ class MainActivity : AppCompatActivity() {
             this, drawerLayout, toolbar, R.string.openDrawer, R.string.closeDrawer
         )
         drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
+        toggle.syncState()//permite mostrar el icono amburguesa
 
         // Configurar el listener para los elementos del Navigation Drawer
         navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.nav_item1 -> {
                     startActivity(Intent(this, MainActivity2::class.java))
-                    drawerLayout.closeDrawer(navView)
+                    drawerLayout.closeDrawer(navView)//para cerra el layout del drawer
                     true
                 }
 

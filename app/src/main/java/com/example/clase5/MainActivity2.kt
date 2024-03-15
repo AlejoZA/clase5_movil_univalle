@@ -53,7 +53,7 @@ class MainActivity2 : AppCompatActivity() {
                 0 -> tab.text = "Chats"
                 1 -> tab.text = "Novedades"
             }
-        }.attach()
+        }.attach() //para mostrar las pestañas
     }
 
     private fun setupButtonNavigation(){
