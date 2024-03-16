@@ -1,23 +1,15 @@
 package com.example.clase5
 
-import ViewPagerAdapter
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.GravityCompat
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.viewpager2.widget.ViewPager2
 import com.example.clase5.databinding.ActivityMainBinding
-import com.google.android.material.navigation.NavigationView
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -60,11 +52,13 @@ class MainActivity : AppCompatActivity() {
 
         val drawerLayout = binding.drawerLayout
         val navView = binding.navView
-
+        navView.itemIconTintList = null //para que aplique el color original de los iconos
         // para implementar un botón de navegación en el toolbar
         val toggle = ActionBarDrawerToggle(
             this, drawerLayout, toolbar, R.string.openDrawer, R.string.closeDrawer
         )
+        // Aplica el color a tu Drawable
+        toggle.drawerArrowDrawable.color = ContextCompat.getColor(this,R.color.white)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()//permite mostrar el icono amburguesa
 
